@@ -1,0 +1,11 @@
+<h3>Login page</h3>
+
+<div>
+    <label >Username:</label>
+    <input type="text"  [(ngModel)]="user.username" placeholder="Enter Username"/><br>
+    <label >Password:</label>
+    <input type="text" [(ngModel)]="user.password" placeholder="Enter your pasword"/><br>
+    <label>Email:</label>
+    <input type="text" [(ngModel)]="user.email" placeholder="Enter your Email"/><br>
+    <button  type="button" class="btn btn-primary" (click)="signup()">Submit</button>
+</div>
