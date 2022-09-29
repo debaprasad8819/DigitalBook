@@ -3,14 +3,7 @@
     <label>Title::</label>
     <input type="text"  [(ngModel)]="book.title"  placeholder="Enter Title"/><br>
     
-    
-</div>
-<button (click) ='saveBook()'>saveBook</button>
-
-
-<!-- 
-        <input type="text" placeholder="Enter your title" [(ngModel)]="book.title"/><br>
-        <label>Publisher::</label>
+    <label>Publisher::</label>
     <input type="text" placeholder="Enter publisher" [(ngModel)]="book.publisher"><br>
     <label>content::</label>
     <input type="text" placeholder="Enter content" [(ngModel)]="book.content"><br>
@@ -21,4 +14,15 @@
     <label>Price::</label>
     <input type="text" placeholder="Enter price" [(ngModel)]="book.price"><br>
     <label>Active::</label>
-    <input type="text" placeholder="Enter active" [(ngModel)]="book.active"><br> -->
+    <input type="text" placeholder="is it Active" [(ngModel)]="book.active"><br>
+    <label>isBlocked::</label>
+    <input type="text" placeholder="Enter isBlocked" [(ngModel)]="book.isBlocked"><br>
+    
+    
+</div>
+<div>
+<button (click) ='saveBook()'>saveBook</button>
+</div>
+
+
+

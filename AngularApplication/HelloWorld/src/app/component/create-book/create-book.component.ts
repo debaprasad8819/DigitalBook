@@ -10,17 +10,20 @@ export class CreateBookComponent implements OnInit {
  
   
   book = {
-    "title":""
+    "title":"",
+    publisher:"",
+    content:"",
+    catagory:"",
+    author:"",
+    price:0,
+    active:true,
+    isBlocked:false
     
   }
 
-  // publisher:"",
-    // content:"",
-    // catagory:"",
-    // author:"",
-    // price:0,
-    // active:true
+  
   saveBook(){
+    
     const observable= this.bookService.saveBook(this.book);
     observable.subscribe(response=>{
       console.log(response);
