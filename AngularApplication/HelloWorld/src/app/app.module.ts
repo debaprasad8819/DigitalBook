@@ -14,14 +14,18 @@ import { Route, RouterModule } from '@angular/router';
 import { CreateBookComponent } from './component/create-book/create-book.component';
 import { AllPurchasedBookByEmailComponent } from './component/all-purchased-book-by-email/all-purchased-book-by-email.component';
 import { BuyBookComponent } from './component/buy-book/buy-book.component';
+import { ReadBookComponent } from './component/read-book/read-book.component';
+import { CheckBookByPaymentIdComponent } from './component/check-book-by-payment-id/check-book-by-payment-id.component';
 
 const routes:Route []= [
   {path:'search', component:SearchBookComponent},
   {path:'signup',component:SignupComponent},
   {path:'signin',component:SigninComponent},
   {path:'createBook', component:CreateBookComponent},
-  {path:'allPurchasedBook', component:AllPurchasedBookByEmailComponent}
-  {path:'buyBook', component:BuyBookComponent}
+  {path:'allPurchasedBook', component:AllPurchasedBookByEmailComponent},
+  {path:'buyBook', component:BuyBookComponent},
+  {path:'readBook', component:ReadBookComponent},
+  {path:'checkPayment', component:CheckBookByPaymentIdComponent}
 ];
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ const routes:Route []= [
     SearchBookComponent,
     CreateBookComponent,
     AllPurchasedBookByEmailComponent,
-    BuyBookComponent
+    BuyBookComponent,
+    ReadBookComponent,
+    CheckBookByPaymentIdComponent
     
   ],
   imports: [

@@ -17,8 +17,7 @@ export class CreateBookComponent implements OnInit {
     author:"",
     price:0,
     active:true,
-    isBlocked:false
-    
+    isBlocked:false    
   }
 
   

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BookService } from 'src/app/book.service';
 
 @Component({
   selector: 'app-buy-book',
@@ -9,14 +10,21 @@ export class BuyBookComponent implements OnInit {
   user={
     username:"",
     email:"",
-    bookId:0
+    bookId:""
   }
 
   buyBook(){
-    this.
+    const observable= this.bookService.buyBook(this.user);
+    observable.subscribe(response=>{
+      console.log(response);
+    },
+    error=>{
+      console.error("Some thing went wrong please try after some time");
+    }
+    )
   }
 
-  constructor() { }
+  constructor(private bookService:BookService) { }
 
   ngOnInit(): void {
   }

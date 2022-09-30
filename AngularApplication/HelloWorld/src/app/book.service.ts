@@ -7,10 +7,34 @@ const token:any = JSON.parse(credential || '{}')['accessToken'];
   providedIn: 'root'
 })
 export class BookService {
+  checkByPaymentId(user: { email: string; paymentId: string; }) {
+    return this.http.get(URL+'readers/'+user.email+'/books/'+user.paymentId,{
+      headers:{
+        Authorization:'Bearer '+token
+      }
+    });
+  }
+  readBook(user: { email: string; bookId: string; }) {
+    return this.http.get(URL+'readers/'+user.email+'/books/'+user.bookId,{
+      headers:{
+        Authorization:'Bearer '+token
+      }
+    });
+  }
+  buyBook(user: { username: string; email: string; bookId: string; }) {
+    const credential = sessionStorage.getItem("credentials");
+    const token:any = JSON.parse(credential || '{}')['accessToken'];
+    return this.http.post(URL+'buyBooks',user,{
+      headers:{
+        Authorization: 'Bearer ' + token
+
+      }
+    });
+  }
   
 
   allPurchasedBook(email: string) {
-    return this.http.get(URL+'/allPurchasedBooks/'+email,{
+    return this.http.get(URL+'allPurchasedBooks/'+email,{
       headers: {
         Authorization: 'Bearer ' + token
       }
