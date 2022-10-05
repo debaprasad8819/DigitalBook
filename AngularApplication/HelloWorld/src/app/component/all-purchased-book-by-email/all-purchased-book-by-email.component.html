@@ -1,8 +1,9 @@
 <p>All purchased book by email</p>
 <div>
-<label>Email</label>
-<input type="text" placeholder="serarch by your registered email" [(ngModel)]='email'>
-</div>
-<div>
-    <button (click)='getAllPurchasedBook()'>Search</button>
-</div>
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">Email</label>
+        <input type="text"class="form-control"  placeholder="serarch by your registered email *" [(ngModel)]='email' autofocus >
+    </div>
+    <div>
+        <button (click)='getAllPurchasedBook()'>Search</button>
+    </div>

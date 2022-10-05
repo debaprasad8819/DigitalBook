@@ -1,15 +1,48 @@
-<nav class="nav nav-tabs">
-    <table>
-        <tr> 
-          <th><a class="nav-link" routerLink='search'>Search Book</a></th>
-          <th><a class="nav-link" routerLink="signup">SignUp</a></th>
-          <th><a class="nav-link" routerLink='signin'>SignIn</a></th>
-          <th><a class="nav-link" routerLink='createBook'>createBook</a></th>
-          <th><a class="nav-link" routerLink='buyBook'>BuyBook</a></th>
-          <th><a class="nav-link" routerLink='readBook'>readBook</a></th>
-          <th><a class="nav-link" routerLink='checkPayment'>SearchBookByPaymentId</a></th>
-        </tr>
-        </table>
+
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content  -->
+  <ul class="nav left">
+    <li class="nav-item">
+      <a class="nav-link" routerLink='createBook'>CreateBook</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='search'>Search Book</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='buyBook'>BuyBook</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="checkPayment">CheckByPayment</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='readBook'>ReadBook</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='allPurchasedBook'>AllPurchasedBok</a>
+    </li>
+    
+  
+  </ul>
+
+
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="signup">SignUp</a>
+  </li>
+  <li class="nav-item" auto>
+    <a class="nav-link" routerLink='signin' autofocus>SignIn</a>
+  </li>
+</ul>
+ 
+
 </nav>
+
+
+  
+  
+  
+   <router-outlet></router-outlet>
+   
+  
 
 

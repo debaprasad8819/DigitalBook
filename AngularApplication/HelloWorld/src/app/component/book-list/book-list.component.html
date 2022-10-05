@@ -1,0 +1,34 @@
+ <p>{{ bookData$}}</p> 
+
+ <div>
+ <table  >
+    <tr >
+        <th>BookId</th>
+       <th>Catagory</th>
+       <th>Author</th>
+       <th>Price</th>
+       <th>Publisher</th>
+       <th>PublishedDate</th>
+       <th>title</th>
+       
+     </tr>
+     <tr  *ngFor="let state of bookData$ | async">
+ 
+        <td>{{state.bookId}}</td>
+        <td>{{state.catagory}}</td>
+        <td>{{state.author}}</td>
+        <td>{{state.price}}</td>
+        <td>{{state.publisher}}</td>
+        <td>{{state.publishedDate}}</td>
+        <td>{{state.title}}</td>
+        
+        <td>
+            <div class="col-14" >
+            <button type="button" class="btn btn-primary mb-16" (click)='edit(state)'>Edit</button>
+        </div>
+    </td>
+        
+</tr>
+ </table>
+</div>
+

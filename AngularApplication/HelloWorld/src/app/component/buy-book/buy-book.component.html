@@ -1,12 +1,18 @@
 <h4>Buy book</h4>
 <div>
-<label for="username">Username:</label>
-<input type="text" placeholder="Enter your username" [(ngModel)]="user.username"/>
-<label for="email">Email:</label>
-<input type="text" placeholder="Enter your email:"  [(ngModel)]="user.email"/>
-<label for="bookId">BookId</label>
-<input type="text" placeholder="Please type your given bookId" [(ngModel)]="user.bookId">
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">Username</label>
+        <input type="text" class="form-control" [(ngModel)]="user.username" placeholder="Username *" />
+    </div>
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">Email</label>
+        <input type="text" class="form-control" [(ngModel)]="user.email" placeholder="Enter your Email" />
+    </div>
+    <div class="col-md-3">
+<label class="form-label" style="font-family:verdana" for="bookId">BookId</label>
+<input type="text" class="form-control"  placeholder="Please type your given bookId" [(ngModel)]="user.bookId">
+</div>
 </div>
 <div>
-    <button (click) = "buyBook()">BuyBook</button>
+    <button class="btn btn-primary mb-3"  (click) = "buyBook()">BuyBook</button>
 </div>

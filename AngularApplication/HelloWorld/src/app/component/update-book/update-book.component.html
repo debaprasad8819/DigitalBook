@@ -1,0 +1,52 @@
+
+<h3 class="text-dark" style="background-color:rgba(195, 176, 230, 0.644); text-align:center;">Add the book</h3>
+<div align="center"   *ngFor="let state of bookData$ | async">
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">BookId</label>
+        <input type="text" class="form-control"   value= {{state.bookId}}/><br>
+    </div>
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">Title</label>
+        <input type="text" class="form-control"  value={{state.title}} /><br>
+    </div>
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">Publisher</label>
+        <input type="text" class="form-control"  value={{state.publisher}}><br>
+    </div>
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">Content</label>
+        <input type="text" class="form-control" value={{state.content}}><br>
+    </div>
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">Catagory </label>
+        <input type="text" class="form-control"  value={{state.catagory}}>
+    </div>
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">Author</label>
+        <input type="text" class="form-control"  value={{state.author}}>
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">Price</label>
+        <input type="text" class="form-control"  value={{state.price}}>
+    </div>
+    <div class="col-md-3">
+        <label style="font-family:verdana">Active</label>
+        <input type="text" class="form-control"  value={{state.active}}><br>
+    </div>
+    <div class="col-md-3">
+        <label class="form-label" style="font-family:verdana">isBlocked</label>
+        <input type="text" class="form-control"  value={{state.isBlocked}}><br>
+    </div>
+    <div class="col-14" >
+        <button type="button" class="btn btn-primary mb-3" (click)='update(state)'>Edit</button>
+    </div>
+
+    <div class="col-md-3" *ngIf="result">
+       Book updated successfully
+      </div>
+</div>
+
+<!-- <div *ngFor="let state of bookData$ | async">
+    <p>{{state.bookId}}</p>
+</div> -->
