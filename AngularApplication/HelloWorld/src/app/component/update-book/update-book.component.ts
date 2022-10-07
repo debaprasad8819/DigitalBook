@@ -22,8 +22,6 @@ export class UpdateBookComponent implements OnInit {
   }
 
   update(state: any){
-   alert("Update work and "+state.bookId)
-   console.log("book any"+state.price)
    this.book.bookId=state.bookId;
    this.book.title=state.titile;
    this.book.publisher=state.publisher;
@@ -39,7 +37,7 @@ export class UpdateBookComponent implements OnInit {
       console.log(response);
       //document.write("<h1 color:green>Book updated successfully</h1>");
       this.result="Book updated successfully"
-      this.router.navigate(['/main']);
+      this.router.navigate(['/search']);
     },
     error=>{
       console.error("Something is wrong please ");
