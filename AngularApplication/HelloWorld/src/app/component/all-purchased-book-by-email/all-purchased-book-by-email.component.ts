@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookService } from 'src/app/book.service';
 
 @Component({
@@ -7,12 +8,15 @@ import { BookService } from 'src/app/book.service';
   styleUrls: ['./all-purchased-book-by-email.component.css']
 })
 export class AllPurchasedBookByEmailComponent implements OnInit {
-email:string="";
+  email:string="";
+  result:string=""
 
 getAllPurchasedBook(){
  const observable= this.bookService.allPurchasedBook(this.email);
  observable.subscribe(response=>{
    console.log(response);
+   this.bookService.sendData(response);
+    this.router.navigate(['/booklist'])
  },
  error=>{
    console.error("something went wrong please try after sometime");
@@ -21,7 +25,7 @@ getAllPurchasedBook(){
 }
 
 
-  constructor(private bookService:BookService) { }
+  constructor(private bookService:BookService,private router:Router) { }
 
   ngOnInit(): void {
   }

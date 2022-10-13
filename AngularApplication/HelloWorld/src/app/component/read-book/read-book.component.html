@@ -1,6 +1,18 @@
-<p>Read book</p>
 <div>
-    <div class="col-md-3">
+    <table style="width:100%">
+  
+        <tr style="height:100px;background-color: darkslategrey;">
+         
+        
+          <td>
+          <h3 align="center">Digitalbook</h3>      
+          </td>  
+        </tr> 
+      </table>
+</div>
+<h3 align="center">READ THE CONTENT</h3>
+<div align="center">
+    <div   class="col-md-3">
         <label class="form-label" style="font-family:verdana">Email</label>
         <input type="text" class="form-control" [(ngModel)]="user.email" placeholder="Email *" />
     </div>
@@ -8,8 +20,9 @@
 <label class="form-label" style="font-family:verdana" for="bookId">BookId</label>
 <input type="text" class="form-control"  placeholder="BookId *" [(ngModel)]="user.bookId">
 </div>
-</div>
-
 <div>
     <button  class="btn btn-primary mb-3" (click)= "readBook()" >ReadBook</button>
 </div>
+</div>
+
+

@@ -7,9 +7,13 @@ import { BookService } from 'src/app/book.service';
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
+
 export class BookListComponent implements OnInit {
 
+ role:string=""
+ result:boolean=false
   bookData$: any;
+  
   book = {
     bookId:"",
     "title":"",
@@ -27,14 +31,19 @@ export class BookListComponent implements OnInit {
    }
 
    edit(book: any){
-     alert("Edit work"+book.bookId)
+     alert("Edit work"+this.role)
     this.bookService.sendData(book);
     this.router.navigate(['/update'])
    }
   
 
   ngOnInit(): void {
-    //console.log(window.history.state.data);
+    const credential = sessionStorage.getItem("credentials");
+    const token:any = JSON.parse(credential || '{}')['roles'];
+    this.role=token[0]
+    if(this.role!='ROLE_READER'){
+      this.result=true
+    }
     this.bookData$ = this.bookService.getData();
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { observable } from 'rxjs';
 import { BookService } from 'src/app/book.service';
 
@@ -9,14 +10,17 @@ import { BookService } from 'src/app/book.service';
 })
 export class ReadBookComponent implements OnInit {
   user = {
-    email:"",
-    bookId:""
+    email:"debaprasad59@gmail.com",
+    bookId:"56"
   }
   readBook(){
     alert("this user bookId::"+this.user.bookId+"BookId::::  "+this.user.email);
     const observable= this.bookService.readBook(this.user);
     observable.subscribe(response=>{
       console.log(response);
+      
+      this.router.navigate(['/success']);
+      this.bookService.sendData(response);
     },
     error=>{
       console.error("something went wrong plase try after some time");
@@ -24,7 +28,7 @@ export class ReadBookComponent implements OnInit {
     )
   }
 
-  constructor(private bookService:BookService) { }
+  constructor(private bookService:BookService,private router:Router) { }
 
   ngOnInit(): void {
   }

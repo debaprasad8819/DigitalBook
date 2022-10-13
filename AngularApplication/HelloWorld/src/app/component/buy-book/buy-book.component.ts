@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookService } from 'src/app/book.service';
 
 @Component({
@@ -7,16 +8,19 @@ import { BookService } from 'src/app/book.service';
   styleUrls: ['./buy-book.component.css']
 })
 export class BuyBookComponent implements OnInit {
+  result:string=""
   user={
-    username:"",
-    email:"",
-    bookId:""
+    username:"debaprasad89",
+    email:"debaprasad89@gmail.com",
+    bookId:"11"
   }
 
   buyBook(){
     const observable= this.bookService.buyBook(this.user);
     observable.subscribe(response=>{
       console.log(response);
+      //this.router.navigate(['/search']);
+      this.result="Book purchased Successfully"
     },
     error=>{
       console.error("Some thing went wrong please try after some time");
@@ -24,7 +28,7 @@ export class BuyBookComponent implements OnInit {
     )
   }
 
-  constructor(private bookService:BookService) { }
+  constructor(private bookService:BookService,private router:Router) { }
 
   ngOnInit(): void {
   }

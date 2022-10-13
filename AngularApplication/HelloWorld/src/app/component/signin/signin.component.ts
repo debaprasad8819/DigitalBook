@@ -30,14 +30,13 @@ export class SigninComponent implements OnInit {
   }
    
   signin(){
-    alert("this.user.username"+this.user.username);
     if((this.user.username && this.user.password)){ 
    const observable  =  this.userService.signIn(this.user);
    observable.subscribe(
    response=>{
      console.log(response);
      sessionStorage.setItem("credentials",JSON.stringify(response));
-     this.router.navigate(['/main']);
+     this.router.navigate(['/search']);
      
    },
    error=>{

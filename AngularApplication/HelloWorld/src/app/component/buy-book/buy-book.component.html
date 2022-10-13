@@ -1,18 +1,60 @@
-<h4>Buy book</h4>
-<div>
-    <div class="col-md-3">
-        <label class="form-label" style="font-family:verdana">Username</label>
-        <input type="text" class="form-control" [(ngModel)]="user.username" placeholder="Username *" />
-    </div>
-    <div class="col-md-3">
-        <label class="form-label" style="font-family:verdana">Email</label>
-        <input type="text" class="form-control" [(ngModel)]="user.email" placeholder="Enter your Email" />
-    </div>
-    <div class="col-md-3">
-<label class="form-label" style="font-family:verdana" for="bookId">BookId</label>
-<input type="text" class="form-control"  placeholder="Please type your given bookId" [(ngModel)]="user.bookId">
+<!doctype html>
+<html lang="en">
+ 
+  <body class="p-3 m-0 border-0 bd-example">
+
+    <table style="width:100%">
+  
+        <tr style="height:100px;background-color: darkslategrey;">
+         
+        
+          <td>
+          <h3 align="center">Digitalbook</h3>      
+          </td>  
+        </tr> 
+      </table>  
+
+      <h5 align="center">BEST OF USED BOOKS</h5> 
+    
+    <div  align="center"  class="col-md-12 needs-validation was-validated"  novalidate="">
+      
+      
+        <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Username</label>
+            <input type="text" class="form-control" placeholder="Email *" [(ngModel)]="user.username" id="validationCustom05" required="">
+            <div class="invalid-feedback">
+              Username should not be empty
+            </div>
+          </div>
+      
+      <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">Email</label>
+        <input type="text" class="form-control" placeholder="BookId *" [(ngModel)]="user.email" id="validationCustom05" required="">
+        <div class="invalid-feedback">
+          Email should not be empty.
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">BookId</label>
+        <input type="text" class="form-control" placeholder="BookId *" [(ngModel)]="user.bookId" id="validationCustom05" required="">
+        <div class="invalid-feedback">
+          BookId should not be empty.
+        </div>
+      </div>
+
+     
+
+      <div>
+    <button class="btn btn-primary mb-3"  (click) = "buyBook()">BUY IT NOW</button>
 </div>
 </div>
-<div>
-    <button class="btn btn-primary mb-3"  (click) = "buyBook()">BuyBook</button>
-</div>
+<div *ngIf="result" class="alert alert-success" role="alert">
+    Book Purchased Successfully
+  </div>
+    
+
+    
+  </body>
+</html>

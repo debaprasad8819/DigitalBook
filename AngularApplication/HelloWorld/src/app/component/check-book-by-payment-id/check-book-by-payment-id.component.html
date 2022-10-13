@@ -1,9 +1,19 @@
-<p>check-book-by-payment-id works!</p>
-
-<p>Read book</p>
 <div>
-
-<div class="col-md-3">
+    <table style="width:100%">
+  
+        <tr style="height:100px;background-color: darkslategrey;">
+         
+        
+          <td>
+          <h3 align="center">Digitalbook</h3>      
+          </td>  
+        </tr> 
+      </table>
+      <h3 align="center">CHECK BOOKS BASED ON YOUR PAYMENT</h3>  
+</div>
+<div>
+<div align="center">
+<div  class="col-md-3">
     <label class="form-label" style="font-family:verdana">Email</label>
     <input type="text" class="form-control" [(ngModel)]="user.email" placeholder="Email *" />
 </div>
@@ -14,4 +24,5 @@
 
 <div>
     <button class="btn btn-primary mb-3"  (click) = "checkByPaymentId()" >ReadBook</button>
+</div>
 </div>

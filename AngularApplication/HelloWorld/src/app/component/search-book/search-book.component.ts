@@ -19,7 +19,7 @@ export class SearchBookComponent implements OnInit {
   sarchBook(){
     const observable = this.bookService.searchBook(this.book);
     observable.subscribe(response=>{
-      //console.log(response);
+      console.log(response);
       this.responses=response;
       //console.log(this.responses);
       this.bookService.sendData(response);
@@ -31,10 +31,7 @@ export class SearchBookComponent implements OnInit {
     }
     )
 
-    // this.router.navigate(['/booklist'], {
-    //   state:{data:this.responses}
-      
-    // });
+    
   }
 
   constructor(private bookService:BookService,private router:Router) { }

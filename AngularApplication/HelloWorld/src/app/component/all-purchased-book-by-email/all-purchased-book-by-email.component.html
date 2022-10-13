@@ -1,9 +1,24 @@
-<p>All purchased book by email</p>
-<div>
+
+
+<table style="width:100%">
+  
+    <tr style="height:100px;background-color: darkslategrey;">
+     
+    
+      <td>
+      <h3 align="center">Digitalbook</h3>      
+      </td>  
+    </tr> 
+  </table> 
+  <h5 align="center">SEARCH ALL PURCHASED BOOK</h5> 
+<div align="center">
     <div class="col-md-3">
         <label class="form-label" style="font-family:verdana">Email</label>
-        <input type="text"class="form-control"  placeholder="serarch by your registered email *" [(ngModel)]='email' autofocus >
+        <input type="text"class="form-control"  placeholder="serarch by your registered email *" [(ngModel)]='email'  >
     </div>
     <div>
         <button (click)='getAllPurchasedBook()'>Search</button>
     </div>
+    <div *ngIf="result" class="alert alert-success" role="alert">
+        Book Purchased Successfully
+      </div>

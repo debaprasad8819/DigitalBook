@@ -10,16 +10,16 @@ import {Router} from '@angular/router';
 export class SignupComponent implements OnInit {
   roles:string=""
   user = {
-    username: "",
-    password:"",
-    email:"",
+    username: "debaprasad12",
+    password:"debaprasad12",
+    email:"debaprasad12@gmail.com",
     role:[""]
   };
   validation(){
     let role1
     if(this.roles=="Author"){
          this.user.role=["ROLE_AUTHOR"]
-        alert(role1)
+       
     }else if(this.roles=="Author"){
       this.user.role=["ROLE_READER"]
     }
@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
  if(this.roles=="Reader"){
    this.user.role=["ROLE_READER"]
  }
-    alert(this.user.role)
+    
     const observable = this.userService.signUp(this.user);
     observable.subscribe(
       response=>{

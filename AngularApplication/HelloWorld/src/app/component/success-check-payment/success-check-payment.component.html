@@ -1,0 +1,31 @@
+<p>{{ bookData$}}</p> 
+
+<div>
+<table  >
+   <tr >
+      <th>Catagory</th>
+      <th>Author</th>
+      <th>Price</th>
+      <th>Publisher</th>
+      <th>PublishedDate</th>
+      <th>title</th>
+      <th>Edit</th>
+      
+    </tr>
+    <tr  *ngFor="let state of bookData$ | async">
+
+       
+       <td>{{state.catagory}}</td>
+       <td>{{state.author}}</td>
+       <td>{{state.price}}</td>
+       <td>{{state.publisher}}</td>
+       <td>{{state.publishedDate}}</td>
+       <td>{{state.title}}</td>
+       
+       
+       
+</tr>
+</table>
+</div>
+
+

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+ 
+  <body class="p-3 m-0 border-0 bd-example">
+
+    <table style="width:100%">
+  
+        <tr style="height:100px;background-color: darkslategrey;">
+         
+        
+          <td>
+          <h3 align="center">Digitalbook</h3>      
+          </td>  
+        </tr> 
+      </table>  
+    
+    <div  align="center"  class="col-md-12 needs-validation was-validated"  novalidate="">
+      
+      
+        <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Email</label>
+            <input type="text" class="form-control" placeholder="Email *" [(ngModel)]="user.email" id="validationCustom05" required="">
+            <div class="invalid-feedback">
+              Email should not be empty
+            </div>
+          </div>
+      
+      <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">BookId</label>
+        <input type="text" class="form-control" placeholder="BookId *" [(ngModel)]="user.bookId" id="validationCustom05" required="">
+        <div class="invalid-feedback">
+          BookId should not be empty.
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">PaymentId</label>
+        <input type="text" class="form-control" placeholder="PaymentId *" [(ngModel)]="user.paymentId" id="validationCustom05" required="">
+        <div class="invalid-feedback">
+          PaymentId should not be empty.
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">RefundAmount</label>
+        <input type="text" class="form-control" placeholder="RefundAmount *" [(ngModel)]="user.refundAmount" id="validationCustom05" required="">
+        <div class="invalid-feedback">
+          RefundAmount should not be empty.
+        </div>
+      </div>
+
+      <div  class="col-12" >
+        <button  class="btn btn-primary mb-4" (click)='refund()'>Refund</button>
+    </div>
+</div>
+<div *ngIf="result" class="alert alert-success" role="alert">
+    Refund Request generated successfully
+  </div>
+    
+
+    
+  </body>
+</html>

@@ -1,6 +1,6 @@
- <p>{{ bookData$}}</p> 
 
- <div>
+    <h4 align="center">BOOK DETAILS</h4>
+ <div align="center">
  <table  >
     <tr >
         <th>BookId</th>
@@ -10,6 +10,7 @@
        <th>Publisher</th>
        <th>PublishedDate</th>
        <th>title</th>
+       <th>Edit</th>
        
      </tr>
      <tr  *ngFor="let state of bookData$ | async">
@@ -24,7 +25,7 @@
         
         <td>
             <div class="col-14" >
-            <button type="button" class="btn btn-primary mb-16" (click)='edit(state)'>Edit</button>
+            <button  [disabled]="!(result)" type="button" class="btn btn-primary mb-16" (click)='edit(state)'>Edit</button>
         </div>
     </td>
         

@@ -1,4 +1,17 @@
-<div></div>
+<div>
+    <table style="width:100%">
+  
+        <tr style="height:100px;background-color: darkslategrey;">
+         
+        
+          <td>
+          <h3 align="center">Digitalbook</h3>      
+          </td>  
+        </tr> 
+      </table>
+</div>
+
+
 <h3 class="text-dark" style="background-color:rgba(195, 176, 230, 0.644); text-align:center;">Add the book</h3>
 <div align="center">
     <div class="col-md-3">
@@ -36,6 +49,6 @@
     </div>
 
 </div>
-<div class="col-14" align="center">
-    <button type="button" class="btn btn-primary mb-3" (click)='saveBook()'>saveBook</button>
+<div   class="col-14" align="center">
+    <button  [disabled]="!(result)" type="button" class="btn btn-primary mb-3" (click)='saveBook()'>saveBook</button>
 </div>
