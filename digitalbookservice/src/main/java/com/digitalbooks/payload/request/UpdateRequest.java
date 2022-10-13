@@ -19,6 +19,9 @@ private String catagory;
 	private String publisher;
 
 	private Boolean active;
+private String content;
+	
+	private String author;
 	
 	
 	public Boolean getActive() {
@@ -29,9 +32,7 @@ private String catagory;
 		this.active = active;
 	}
 
-	private String content;
 	
-	private String author;
 	
 	
 	

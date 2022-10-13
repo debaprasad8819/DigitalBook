@@ -63,7 +63,7 @@ public class DigitalBooksService {
 			}
 
 			Map<String,Set<Long>> bookList=getBookId(user.getId());
-			return null;
+			return bookList;
 
 		}
 		
@@ -141,7 +141,7 @@ public class DigitalBooksService {
 							return userRepository.findByEmail(email);
 						}
 						
-						public Payment save(Payment payment) {
+						public Payment savePayment(Payment payment) {
 							return paymentRepository.save(payment);
 						
 					}
@@ -157,6 +157,14 @@ public class DigitalBooksService {
 							Set<Long>  bookIdList = new HashSet<Long>();
 							Map<String,Set<Long>> map = new HashMap<String,Set<Long>>();
 							paymentList.forEach(payment->{
+//								Book book1= getBookByBookId(payment.getBookId());
+//								bookIdList.add(book1.getBookId().toString());
+//								bookIdList.add(book1.getCatagory());
+//								bookIdList.add(book1.getAuthor());
+//								bookIdList.add(book1.getPrice().toString());
+//								bookIdList.add(book1.getPublisher());
+//								bookIdList.add(book1.getPublishedDate());
+//								bookIdList.add(book1.getTitle());
 								bookIdList.add(payment.getBookId());
 							});
 							map.put("bookId", bookIdList);
@@ -173,7 +181,7 @@ public class DigitalBooksService {
 							Map<String,String> map = new HashMap<String,String>();
 							if(isuser) {
 								Book book =  getBookByBookId(bookId); 
-								System.out.println("book is generated::"+book.getAuthor());
+								
 								map.put("catagory", book.getCatagory());
 								map.put("content", book.getContent());
 								map.put("Author", book.getAuthor());
@@ -236,11 +244,11 @@ public class DigitalBooksService {
 						refund.setBookId(bookId);
 						refund.setPaymentId(paymentId);
 						refund.setReaderId(readerId);
-						System.out.println("Aftyer readerId@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+						
 						refund.setRefundDate(new Date());
 						refund.setRefundedAmount(refundAmount);
 						refund.setRefundStatus(status);
-						System.out.println("After status@@@@@@@@@@@@@@@@@@@@");
+
 						refund.setStatusId(statusId);
 						System.out.println(refund+"   Refund object");
 						System.out.println(refund.getRefundStatus()+"BookId##"+refund.getBookId()+"paymentId:  "+refund.getPaymentId());
@@ -248,6 +256,7 @@ public class DigitalBooksService {
 						refundRepository.save(refund);
 						}catch(Exception e) {
 							e.printStackTrace();
+							throw e;
 						}
 						
 						return "Refund request generated successfully";

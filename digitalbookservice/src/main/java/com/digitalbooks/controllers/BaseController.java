@@ -43,7 +43,8 @@ public class BaseController {
 	 @ExceptionHandler(RequestNotFoundException.class)
 	 @ResponseStatus(HttpStatus.BAD_REQUEST)
 	    @ResponseBody
-	    Map<String,String> showCustomMessage(Exception e){
+		
+	    public Map<String,String> showCustomMessage(Exception e){
 
 
 	        Map<String,String> response = new HashMap<>();

@@ -64,7 +64,7 @@ public class DigitalBooksController extends BaseController  {
 	
 	
 	
-	@PreAuthorize("hasRole('ROLE_READER')")
+	@PreAuthorize("hasRole('ROLE_READER') or hasRole('ROLE_AUTHOR')")
 	@GetMapping("/searchBooks") 
 	@ResponseBody
 	public ResponseEntity SearchBooks(@RequestParam String catagory,@RequestParam String author,@RequestParam String price) throws JsonProcessingException {
@@ -79,6 +79,12 @@ public class DigitalBooksController extends BaseController  {
 			payload.put("publisher",book.getPublisher());
 			payload.put("title",book.getTitle());
 			payload.put("price",book.getPrice().toString());
+			payload.put("bookId", book.getBookId().toString());
+			payload.put("content", book.getContent());
+			payload.put("isBlocked", book.getIsBlocked().toString());
+			
+			
+			
 		});
 		
 
@@ -94,13 +100,13 @@ public class DigitalBooksController extends BaseController  {
 	public ResponseEntity  buyBooks(@Valid @RequestBody BookRequest bookRequst)  {
 		
 		
-		Long price1=Long.parseLong(bookRequst.getBookId());
+		Long bookId=Long.parseLong(bookRequst.getBookId());
 		Boolean isUserAvailable=digitalBooksService.isUserAvailable(bookRequst.getUsername());
-		Boolean isBookAvailable=digitalBooksService.isBookAvailable(price1);
+		Boolean isBookAvailable=digitalBooksService.isBookAvailable(bookId);
 		Map<String,Long> respayload= new HashMap<String,Long>();
 		
-		if(isUserAvailable && isBookAvailable) {
-			Book book = digitalBooksService.getBookByBookId(price1);
+		
+			Book book = digitalBooksService.getBookByBookId(bookId);
 			Optional<User> optional = digitalBooksService.getUserByName(bookRequst.getUsername());
 			User user=null;
 			Payment payment = new Payment();
@@ -112,12 +118,13 @@ public class DigitalBooksController extends BaseController  {
 			payment.setPrice(book.getPrice());
 			payment.setBookId(book.getBookId());
 			payment.setReaderId(user.getId());
-			  payment =digitalBooksService.save(payment);
+			if(isUserAvailable && isBookAvailable) {
+		   Payment  payment1 =digitalBooksService.savePayment(payment);
 			
 			
 			
-			respayload.put("pamentId", payment.getPaymentId());
-			respayload.put("bookId", payment.getBookId());
+			respayload.put("pamentId", payment1.getPaymentId());
+			respayload.put("bookId", payment1.getBookId());
 			
 		
 		}		
@@ -138,14 +145,17 @@ public class DigitalBooksController extends BaseController  {
 		User user =null ;
 		 if(optional.isPresent())
 			 user =optional.get();
+		 
+		 System.out.println("User"+user);
 		
 		Boolean isReaderPurchased = digitalBooksService.isPaymentAvailableByReaderId(user.getId());
 		if(isReaderPurchased) {
 			
 		}
+		System.out.println("Reader purchased"+isReaderPurchased);
 
 		Map<String,Set<Long>> bookList=digitalBooksService.getBookId(user.getId());
-	  
+	    System.out.println("bookList"+bookList);
 		ResponseEntity responseEntity = new ResponseEntity(bookList , HttpStatus.OK);
 		
 		return responseEntity;
@@ -212,6 +222,7 @@ public class DigitalBooksController extends BaseController  {
 		
 		return responseEntity;
 	}
+	
 	
 	
 
