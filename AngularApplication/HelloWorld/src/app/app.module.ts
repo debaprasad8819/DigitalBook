@@ -19,6 +19,11 @@ import { CheckBookByPaymentIdComponent } from './component/check-book-by-payment
 import { UpdateBookComponent } from './component/update-book/update-book.component';
 import { BookListComponent } from './component/book-list/book-list.component';
 import { MainComponent } from './component/main/main.component';
+import { RefundComponent } from './component/refund/refund.component';
+import { SuccessComponent } from './component/success/success.component';
+import { SuccessRefundComponent } from './component/success-refund/success-refund.component';
+import { SuccessCheckPaymentComponent } from './component/success-check-payment/success-check-payment.component';
+
 
 
 const routes:Route []= [
@@ -32,7 +37,12 @@ const routes:Route []= [
   {path:'checkPayment', component:CheckBookByPaymentIdComponent},
   {path:'booklist', component:BookListComponent},
   {path:'main', component:MainComponent},
-  {path:'update', component:UpdateBookComponent}
+  {path:'update', component:UpdateBookComponent},
+  {path:'refund', component:RefundComponent},
+  {path:'header', component:HeaderComponent},
+  {path:'success', component:SuccessComponent},
+  {path:'successRefund', component:SuccessRefundComponent},
+  {path:'successPayment', component:SuccessCheckPaymentComponent}
 ];
 @NgModule({
   declarations: [
@@ -49,7 +59,12 @@ const routes:Route []= [
     CheckBookByPaymentIdComponent,
     UpdateBookComponent,
     BookListComponent,
-    MainComponent
+    MainComponent,
+    RefundComponent,
+    SuccessComponent,
+    SuccessRefundComponent,
+    SuccessCheckPaymentComponent,
+    
     
   ],
   imports: [

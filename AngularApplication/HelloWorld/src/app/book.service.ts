@@ -11,6 +11,21 @@ const token:any = JSON.parse(credential || '{}')['accessToken'];
   providedIn: 'root'
 })
 export class BookService {
+  
+
+  refundBook(user: { email: string; bookId: string; paymentId: string; refundAmount: string; }) {
+    const credential = sessionStorage.getItem("credentials");
+    const token:any = JSON.parse(credential || '{}')['accessToken'];
+    
+    const res= this.http.put(URL+'refund',user,{
+      headers:{
+        Authorization: 'Bearer ' + token
+
+      }
+    });
+    console.log(res);
+    return res;
+  }
   updateBook(book: { bookId: string; title: string; publisher: string; content: string; catagory: string; author: string; price: number; isBlocked: boolean; }) {
     const credential = sessionStorage.getItem("credentials");
     const token:any = JSON.parse(credential || '{}')['accessToken'];
@@ -24,16 +39,7 @@ export class BookService {
     console.log(res);
     return res;
   }
-  // updateBook1(book: any) {
-  //   const credential = sessionStorage.getItem("credentials");
-  //   const token:any = JSON.parse(credential || '{}')['accessToken'];
-  //   return this.http.post(URL+'updateBook',book,{
-  //     headers:{
-  //       Authorization: 'Bearer ' + token
 
-  //     }
-  //   });
-  // }
   
   searchData$: BehaviorSubject<object[]> = new BehaviorSubject<object[]>([{}]);
   sendData(responses: Object) {
@@ -44,7 +50,9 @@ export class BookService {
   }
   
   checkByPaymentId(user: { email: string; paymentId: string; }) {
-    return this.http.get(URL+'readers/'+user.email+'/books/'+user.paymentId,{
+    const credential = sessionStorage.getItem("credentials");
+    const token:any = JSON.parse(credential || '{}')['accessToken'];
+    return this.http.get(URL+'readers/'+user.email+'/books/paymentId/'+user.paymentId,{
       headers:{
         Authorization:'Bearer '+token
       }
