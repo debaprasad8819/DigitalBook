@@ -1,0 +1,145 @@
+Aws
+--------
+https://apc01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fiihtedu.cloud.builder.ai%2F&data=05%7C01%7CDebaprasad.Swain%40cognizant.com%7Cef009214c2d744ac531c08da9c4ed032%7Cde08c40719b9427d9fe8edf254300ca7%7C0%7C0%7C637994159579527572%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=AzyIOstOne9C1xDe3OWngkJX%2BHUWKbn%2BJ28LZfD%2Fy7I%3D&reserved=0
+debaprasad.swain2@mml.local
+Password:- _jGszLSf
+
+Swagger Ui
+--------------
+http://localhost:9087/swagger-ui.html
+https://gabrielpulga.medium.com/a-beginners-guide-to-unit-testing-crud-endpoints-of-a-spring-boot-java-web-service-api-8ae342c9cbcd
+
+Zookeeper server window
+-------------------------
+C:\kafka_2.12-2.4.1\bin\windows>zookeeper-server-start.bat  D:\kafka_2.13-3.2.1\config\zookeeper.properties
+
+Kakfa Server
+--------------
+D:\kafka_2.13-3.2.1\bin\windows>kafka-server-start D:\kafka_2.13-3.2.1\config\server.properties
+
+http://localhost:9087/swagger-ui.html
+
+private String bookId;
+	
+
+	private String title;
+private String catagory;
+	
+	private String  price;
+	private Boolean isBlocked;
+	private String publisher;
+
+	private Boolean active;
+
+
+Update Request
+----------------
+{
+  "active": true,
+  "isBlocked":false,
+  "author": "Marvel",
+  "bookId": 1,
+  "catagory": "Story",
+  "content": "jjjjjjj",
+  "price": 34
+  "publisher": "author",
+  "title": "The main stream"
+}
+
+{
+    "title": "The Hell and Haven",
+    "catagory":"stroy",
+    "publisher":"Mohan Bhagabat",
+    "active:true;
+    "content":"jljljhlhjljhkhljl",
+    "author":"Mathever",
+    "publishedDate":2000-08-08
+}
+
+Read the content
+----------------------------
+http://localhost:9091/book/searchBooks?catagory=Story&author=Marvel&price=34
+http://localhost:9087/api/book/allPurchasedBooks/debaprasad@gmail.com
+
+Read the content
+------------------
+http://localhost:9087/api/book/readers/debaprasad@gmail.com/books/1
+
+Reader can see the  purchased book based on the paymentId
+------------------------------------------------------------
+http://localhost:9087/api/book/readers/debaprasad@gmail.com/books/payemntId/4
+
+
+git remote add origin https://github.com/debaprasad8819/digitalbooks-service.git
+
+
+digitalBooks-service
+spring-boot-security-jwt
+
+git remote add origin https://github.com/debaprasad8819/digitalbooks-service.git
+
+{
+  "paymentId":"",	
+   "email":"",
+   "bookId":"",
+   "refundAmount":24.5
+}
+
+
+
+
+mvn package
+digitalbook-database
+Endpoint
+digitalbook-database.c5pcvp9mmuem.us-east-1.rds.amazonaws.com
+
+Port
+3306
+
+Ec2 password
+-----------
+key value pair- digitalbook-server
+t79CJl142n33Kj0bgQ8S!4OgOyXsMW?G
+
+
+
+
+https://angular.io/guide/forms#the-sample-application
+
+this.router.navigate(["page1"], { state: { path: "app" } });
+
+
+Angular canActive
+---------------------
+https://www.tektutorialshub.com/angular/angular-canactivate-guard-example/#what-is-canactivate-guard
+
+
+https://stackoverflow.com/questions/60134219/angular-history-state-data-returns-undefined-instead-of-the-last-set-data-object
+
+
+
+<div class="text-center" class="card">
+    <figure class="figure">
+        <img src="{{imageUrl}}" class="figure-img img-fluid rounded">
+        <figcaption class="figure-caption">Read book online</figcaption>
+      </figure>
+  </div>
+
+
+
+
+https://www.tektutorialshub.com/angular/angular-canactivate-guard-example/#what-is-canactivate-guard
+
+
+Angular
+-------------
+https://material.angular.io/guide/getting-started
+https://angular.io/tutorial
+https://blog.angular.io/angular-extended-diagnostics-53e2fa19ece9
+
+
+To search the images
+----------
+http://ww1.unplash.com/
+
+
